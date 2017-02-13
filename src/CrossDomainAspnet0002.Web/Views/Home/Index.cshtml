@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>@ViewBag.Title Web Application</title>
+	<meta name="author" content="William Chang" />
+</head>
+<body>
+	<h1>Hello From @ViewBag.Title Web Application</h1>
+	<p>The current date and time is @DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</p>
+	<p>@Html.Raw(ViewBag.Message)</p>
+	<ul>
+		<li><a href="@String.Concat(Request.Path, "?CustomTokenId=", ViewBag.UnixTimeSeconds)">Generate TokenId from Unix Time Seconds, set TokenId to ASP.NET Session, and then reload.</a></li>
+		<li><a href="@Request.RawUrl">Reload with current QueryString</a></li>
+		<li><a href="@Request.Path">Reload without current QueryString</a></li>
+	</ul>
+	@if(!String.IsNullOrEmpty(ViewBag.CustomTokenId)) {
+	<!-- CrossDomainAspnet0001.Web with IIS Express http://localhost:49361/home/sync?TokenId=WilliamChang -->
+	<!-- CrossDomainAspnet0002.Web with IIS Express http://localhost:51125/home/sync?TokenId=WilliamChang -->
+	<!-- CrossDomainAspnet0003.Web with IIS Express http://localhost:51141/home/sync?TokenId=WilliamChang -->
+	<img src="http://local.crossdomain0001.com/home/sync?TokenId=@ViewBag.CustomTokenId" style="display:none;" />
+	<img src="http://local.crossdomain0002.com/home/sync?TokenId=@ViewBag.CustomTokenId" style="display:none;" />
+	<img src="http://local.crossdomain0003.com/home/sync?TokenId=@ViewBag.CustomTokenId" style="display:none;" />
+	}
+</body>
+</html>
