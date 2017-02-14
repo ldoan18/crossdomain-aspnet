@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CrossDomainAspnet0001.Web.Controllers {
+namespace CrossDomainAspnet.Web.Controllers {
 
 public class HomeController : Controller
 {
@@ -27,7 +27,7 @@ public class HomeController : Controller
         sbDebug.AppendFormat("\n<br />\n");
         sbDebug.AppendFormat("ASP.NET Session Id : {0}", Session.SessionID);
         sbDebug.AppendFormat("\n<br />\n");
-        sbDebug.AppendFormat("ASP.NET Session Storage - TokenId : {0}", Session["TokenId"]);
+        sbDebug.AppendFormat("ASP.NET Session Storage - TokenId : {0}", Session["TokenId"] ?? "null");
         sbDebug.AppendFormat("\n<br />\n");
 
         ViewBag.Title = GetAssemblyAttribute<System.Reflection.AssemblyTitleAttribute>().Title.Split('.').FirstOrDefault();

@@ -149,9 +149,9 @@
   </Target>
   <PropertyGroup>
     <PreBuildEvent>xcopy /e /y "$(ProjectDir)Controllers" "$(SolutionDir)src\CrossDomainAspnet0002.Web\Controllers"
-xcopy /e /y "$(ProjectDir)Views\Home" "$(SolutionDir)src\CrossDomainAspnet0002.Web\Views\Home"
+xcopy /e /y "$(ProjectDir)Views" "$(SolutionDir)src\CrossDomainAspnet0002.Web\Views"
 xcopy /e /y "$(ProjectDir)Controllers" "$(SolutionDir)src\CrossDomainAspnet0003.Web\Controllers"
-xcopy /e /y "$(ProjectDir)Views\Home" "$(SolutionDir)src\CrossDomainAspnet0003.Web\Views\Home"</PreBuildEvent>
+xcopy /e /y "$(ProjectDir)Views" "$(SolutionDir)src\CrossDomainAspnet0003.Web\Views"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
